@@ -626,7 +626,7 @@ aside li {
   gap: 10px;
 }
 
-.search {
+.search, .collection, .route-error, .page {
   max-width: 1280px;
   margin: auto;
   margin-top: 30px;
