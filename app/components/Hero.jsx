@@ -6,10 +6,12 @@ export function Hero() {
     let settings = {
         dots: true,
         infinite: false,
-        speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: false
+        arrows: false,
+        autoplay: true,
+        speed: 500,
+        autoplaySpeed: 3000
     }
     return (
         <div className="hero">

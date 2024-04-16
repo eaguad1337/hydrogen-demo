@@ -569,25 +569,23 @@ aside li {
   font-size: 22px;
 }
 
+.category-lists {
+  text-align: center;
+  padding: 20px 0;
+}
+
 
 .category-lists ul {
   display: flex;
   gap: 20px;
   justify-content: center;
   align-items: center;
-  padding-top: 40px;
-  padding-bottom: 20px;
 }
 
-.category-lists ul li {
-  width: 100px;
-  text-align: center;
-  border-radius: 50px;
-}
-
-.category-lists ul li .image {
-  overflow: hidden;
-  border-radius: 50px;
+.category-lists ul li a {
+  color: #fff;
+  font-size: 16px;
+  margin: 0;
 }
 
 .home-slider .slick-list .slick-track {
