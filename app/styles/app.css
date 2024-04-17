@@ -418,6 +418,15 @@ aside li {
   height: auto;
 }
 
+.recommended-product {
+  transition: all .5s;
+}
+
+.recommended-product:hover {
+  text-decoration: none;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
 /*
 * --------------------------------------------------
 * routes/collections._index.tsx
@@ -613,7 +622,7 @@ aside li {
 }
 
 .home-slider .slick-list .slick-track .slick-slide {
-  background-color: #383838;
+  background-color: #1b2740;
   height: 620px;
 }
 
@@ -630,4 +639,22 @@ aside li {
   max-width: 1280px;
   margin: auto;
   margin-top: 30px;
+  height: calc(100vh - 330px);
+}
+
+.hero .home-slider .slick-dots li button {
+ display: none;
+}
+
+.hero .home-slider .slick-dots li {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 20px;
+  transition: width .5s ease-in-out;
+}
+
+.hero .home-slider .slick-dots li.slick-active {
+  width: 60px;
+  background-color: #FEC60D;
 }

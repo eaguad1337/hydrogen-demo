@@ -7,7 +7,7 @@ export function CategoryLists({ collections }) {
 
     return (
         <div className="category-lists">
-            <h3 className='mb-5 text-gray-200 text-3xl font-bold dark:text-white'>Categorías</h3>
+            <h3 className='mb-5 text-gray-200 text-3xl font-bold dark:text-white'>Categorías cursos</h3>
             <ul>
                 {collections.nodes.map((collection) => (
                     <li key={collection.id}>

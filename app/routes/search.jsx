@@ -59,7 +59,7 @@ export default function SearchPage() {
 
   return (
     <div className="search">
-      <h1 className='text-3xl font-bold dark:text-white mb-5'>Resultados de búsqueda</h1>
+      <h1 className='text-3xl font-bold dark:text-white mb-5'>Búsqueda</h1>
       <SearchForm searchTerm={searchTerm} />
       {!searchTerm || !searchResults.totalResults ? (
         <NoSearchResults />

@@ -36,7 +36,7 @@ export default function Page() {
   return (
     <div className="page">
       <header>
-        <h1>{page.title}</h1>
+        <h1 className='mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl dark:text-white'>{page.title}</h1>
       </header>
       <main dangerouslySetInnerHTML={{__html: page.body}} />
     </div>

@@ -151,14 +151,15 @@ export function ErrorBoundary() {
       </head>
       <body>
         <Layout {...rootData}>
-          <div className="route-error">
-            <h1>Oops</h1>
-            <h2>{errorStatus}</h2>
+          <div className="route-error flex items-center flex-col">
+            <h1 className='mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl dark:text-white'>Oops</h1>
+            <h2 className='mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white'>{errorStatus}</h2>
             {errorMessage && (
               <fieldset>
-                <pre>{errorMessage}</pre>
+                <pre className='mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400'>{errorMessage}</pre>
               </fieldset>
             )}
+            <a href="/" className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800'>ir al home</a>
           </div>
         </Layout>
         <ScrollRestoration nonce={nonce} />

@@ -152,7 +152,7 @@ function ProductMain({ selectedVariant, product, variants }) {
   const { title, descriptionHtml } = product;
   return (
     <div className="product-main">
-      <h1 className='mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white'>{title}</h1>
+      <h1 className='mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl dark:text-white'>{title}</h1>
       <ProductPrice selectedVariant={selectedVariant} />
       <br />
       <Suspense
@@ -310,7 +310,7 @@ function AddToCartButton({ analytics, children, disabled, lines, onClick }) {
           <button
             type="submit"
             onClick={onClick}
-            className="link text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-10 py-4 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+            className="link font-semibold text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-10 py-4 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
             disabled={disabled ?? fetcher.state !== 'idle'}
           >
             {children}
