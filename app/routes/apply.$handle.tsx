@@ -12,6 +12,7 @@ import {
 export async function loader({ params, request, context }) {
   const { handle } = params;
   const { storefront } = context;
+  const MIDDLEWARE_URL = context.env.MIDDLEWARE_URL;
 
   const selectedOptions = getSelectedProductOptions(request).filter(
     (option) =>
@@ -224,38 +225,30 @@ export default function ApplyForm() {
   );
 }
 
-export async function action({request}: ActionFunctionArgs) {
+export async function action({request, context}: ActionFunctionArgs) {
   const formData = await request.formData();
-  const email = String(formData.get('email'));
-
-  const errors = {};
-
-  if (!email.includes('@')) {
-    errors.email = 'Invalid email address';
-  }
-
-  if (Object.keys(errors).length > 0) {
-    return json({errors});
-  }
 
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), 5000);
 
-  const response = await fetch("https://puc-ecommerce-api.dmeat.cl/api/apply", {
+  const endpoint = context.env.MIDDLEWARE_URL + "/api/apply"
+
+  console.log("Attempting to submit form to", endpoint)
+
+  const response = await fetch(endpoint, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     signal: controller.signal,
     body: JSON.stringify(Object.fromEntries(formData)),
-  }).catch((error) => {
-    console.error(error);
-  });
+  })
 
   clearTimeout(timeoutId);
 
   if (!response.ok) {
     console.log(response)
+    console.log(await response.text())
 
     return console.log('Failed to submit form');
   }
