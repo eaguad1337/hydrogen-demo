@@ -231,7 +231,9 @@ export async function action({request, context}: ActionFunctionArgs) {
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), 5000);
 
-  const endpoint = context.env.MIDDLEWARE_URL + "/api/apply"
+  console.log(JSON.stringify(context?.env))
+
+  const endpoint = (context?.env?.MIDDLEWARE_URL || "https://puc-ecommerce-api.dmeat.cl") + "/api/apply"
 
   console.log("Attempting to submit form to", endpoint)
 
